@@ -1,0 +1,83 @@
+.profile-page{
+  width: 100%;
+  padding-top: 20rpx;
+}
+.mine{
+  width: 100%
+}
+.mine_title{
+  height: 180rpx;
+  width: 100%;
+  margin:0rpx 0rpx 20rpx;
+  background-color: #fff;
+}
+.mine_title_info{
+  height: 90rpx;
+  width:690rpx;
+  padding:45rpx 30rpx ;
+  display: flex;
+  line-height: 90rpx;
+}
+.mine_title_info_image_view{
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  overflow:hidden;
+}
+.mine_title_info_name{
+  width: 350rpx;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+.address_view{
+  width:260rpx;
+  display: flex;
+  flex :right;
+
+}
+.mine_body{
+  width: 720;
+  padding-left: 30rpx;
+  background-color: #fff;
+  
+}
+.activity{
+  height: 100rpx;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+  line-height: 100rpx;
+}
+
+.fun_more{
+  height: 100rpx;
+  display: flex;
+  line-height: 100rpx;
+}
+.mine_activity{
+ width: 490rpx;
+}
+.user_avatar_url{
+  
+  border-radius: 50%;
+}
+.right_arrow{
+  width: 200rpx;
+  height: 90rpx;
+  margin: 5rpx 0rpx;
+}
+.right_arrow_image{
+  width: 35rpx;
+  height: 31rpx;
+  text-align: right;
+  margin-left:19rpx;
+
+}
+.right{
+  width: 200rpx;
+  text-align: right;
+}
+.select_address{
+  width: 500rpx;
+  text-align:right;
+  color: #818181;
+}

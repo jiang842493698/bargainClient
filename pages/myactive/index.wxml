@@ -1,0 +1,27 @@
+<view wx:if="{{ loadingComplete }}">
+  <view class='active'>
+    <view wx:if="{{list.length>0}}" class="list_length">
+      <view class='distance'></view>
+      <view class='mine_active_list' wx:for="{{list}}" wx:key="id" bindtap='handleNavigateToBenefit' data-id='{{item.id}}'>
+        <view class='active_list'>
+          <view class='active_list_name'>{{ item.title }}</view>
+          <view class='active_list_date'>{{ item.joinAt }}</view>
+          <view class='right_arrow right'>
+            <image class='right_arrow_image' src="/images/right-arrow.png" />
+          </view>
+        </view>
+      </view>
+      <view hidden="{{ list.length == total }}" class='handle_show_more'>
+        <view class='show_more' bindtap='{{ !loadSwitch?"":"showMore" }}'>
+          {{ showMore }}
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class='data'>
+        当前没有活动数据
+      </view>
+    </view>
+  </view>
+</view>
+<loading wx:else></loading>

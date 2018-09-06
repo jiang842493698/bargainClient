@@ -1,0 +1,215 @@
+<view class="container" wx:if="{{ loadingComplete }}">
+  <view class="top-wrap">
+    <navigator class="back" url="./list" open-type="switchTab">更多活动</navigator>
+    <view class="rule" bindtap="toogleRule">活动规则</view>
+  </view>
+  <view class="header-wrap" bindtap="handleShowDetail">
+    <image class="header-image" src="{{ benefit.headerUrl }}"></image>
+  </view>
+  <!-- 用户砍价状态 -->
+  <view class="status-container">
+    <block wx:if="{{ benefit.status == 0 }}">
+      <view class="status">
+        <view class="status-value">活动尚未开始</view>
+      </view>
+    </block>
+    <block wx:if="{{ benefit.status == 1 }}">
+      <block wx:if="{{ bargainRecords.length >= benefit.bargainSteps.length }}">
+        <view class="status-value">ta已砍价成功</view>
+      </block>
+      <block wx:else>
+        <view class="status">
+          <view class="status-item">
+            <text class="status-label">好友助力</text>
+            <text class="status-value">{{ bargainRecords.length >= 1 ? bargainRecords.length - 1 : 0 }}</text>
+          </view>
+          <view class="status-item center">
+            <text class="status-label">已砍价</text>
+            <text class="status-value">{{ m2.getBargainedPrice(benefit, bargainRecords) }}</text>
+          </view>
+          <view class="status-item">
+            <text class="status-label">还需砍价</text>
+            <text class="status-value">{{ benefit.giftFullPrice - benefit.giftFloorPrice - m2.getBargainedPrice(benefit, bargainRecords) }}</text>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:if="{{ benefit.status == 2 }}">
+      <view class="status">
+        <view class="status-value">活动已经结束啦~去首页看看其他活动吧</view>
+      </view>
+    </block>
+  </view>
+  <!-- 获奖概况 -->
+  <view class="winner-container">
+    <view class="winner-header-list">
+      <image wx:for="{{winnerList}}" wx:for-item="headerImage" wx:key="*this"
+        class="winner-header" 
+        src="{{headerImage}}">
+      </image>
+    </view>
+    <view class="winner-survey">
+      <text>已有{{ winnerCount }}人获得奖品，剩余{{ benefit.giftTotalCount - winnerCount }}份</text>
+      <navigator class="show-more" url="../photowall/index?benefit={{ benefit._id }}">查看全部</navigator>
+    </view>
+  </view>
+  <!-- 操作区域 -->
+  <view class="action-container">
+    <block wx:if="{{ benefit.status == 0 }}">
+      <navigator class="action-button" url="./list" open-type="switchTab">
+        <view class="action-button-content">
+          <text>更多活动</text>
+        </view>
+      </navigator>
+    </block>
+    <block wx:if="{{ benefit.status == 1 }}">
+      <block wx:if="{{ bargainRecords.length < benefit.bargainSteps.length }}">
+        <!-- 未完成砍价 -->
+        <block wx:if="{{ bargainUsers[bargainer.id] }}">
+          <!-- 已助力 -->
+          <view class="action-tips">
+            已帮助好友砍价
+          </view>
+          <navigator class="action-button" open-type="redirect" url="/pages/benefit/join?benefit={{benefit._id }}">
+            <view class="action-button-content">
+              <text>我也要拿</text>
+            </view>
+          </navigator>
+        </block>
+        <block wx:else>
+          <!-- 未助力 -->
+          <view class="action-tips">
+            ta还需
+            <text class="tips-number">{{ benefit.bargainSteps.length - bargainRecords.length }}</text>
+            位好友砍价，即可获得奖品
+          </view>
+          <button class="action-button" bindtap="helpBargain">
+            <view class="action-button-content">
+              <text>帮TA砍一刀</text>
+            </view>
+          </button>
+        </block>
+      </block>
+      <block wx:if="{{ bargainRecords.length >= benefit.bargainSteps.length }}">
+        <!-- 已完成砍价 -->
+        <view class="action-tips">
+          好友已完成砍价，成功获得奖品！
+        </view>
+        <navigator class="action-button" open-type="redirect" url="/pages/benefit/join?benefit={{ benefit._id }}">
+          <view class="action-button-content">
+            <text>我也要拿</text>
+          </view>
+        </navigator>
+      </block>
+    </block>
+    <block wx:if="{{ benefit.status == 2 }}">
+      <navigator class="action-button" url="./list" open-type="switchTab">
+        <view class="action-button-content">
+          <text>更多活动</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <!-- 砍价榜 -->
+  <view class="bargain-container">
+    <view class="title">砍价榜</view>
+    <block wx:if="{{bargainRecords.length > 0}}">
+      <block wx:for="{{ m2.limitBargainRecords(benefit, bargainRecords) }}" wx:key="*this">
+        <view class="bargain-info">
+          <image class="avatar" src="{{ item.avatarUrl }}"></image>
+          <view class="nickname">{{ item.nickName }}</view>
+          <view style="flex-grow: 1"></view>
+          <view class="bargain">砍掉{{ benefit.bargainSteps[index] }}元</view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="bargain-info-empty">
+        <text>暂无好友砍价</text>
+      </view>
+    </block>
+    <view class="show-more" bindtap="handleShowMore"
+      wx:if="{{ benefit.status == 1 && bargainRecords.length < benefit.bargainSteps.length }}">查看更多></view>
+  </view>
+  <button bindgetuserinfo="getUserInfo" class="get-user-info-button" openType="getUserInfo" wx:if="{{ !hasUserInfo && canIUse }}">
+  </button>
+</view>
+<loading wx:else></loading>
+<!-- 规则弹出框 -->
+<view catchtap="toogleRule" catchtouchmove="catchmove" class="intro-mask" wx:if="{{ showRule }}">
+  <view catchtap="toogleRule" class="intro-container">
+    <label class="intro-title">活动规则</label>
+    <scroll-view class="rule-content" scroll-y>
+      <rich-text nodes="{{ruleRichText}}" style="margin:20rpx;"></rich-text>
+    </scroll-view>
+    <button catchtap="toogleRule" class="intro-confirm">我知道了</button>
+  </view>
+</view>
+<!-- 砍价成功弹出框 -->
+<view class="intro-mask" wx:if="{{ showBargainModal }}">
+  <view class="bargain-model-container">
+    <view class="message-section">
+      <text>赞!</text>
+      <text>成功帮ta砍价{{ m2.bargainPrice(benefit, bargainRecords) }}元</text>
+    </view>
+    <view class="tip-section">
+      <text>您也可以立即参加活动哦!</text>
+    </view>
+    <button catchtap="handleJoinBenefit" class="bargain-confirm">我也要拿</button>
+  </view>
+</view>
+<!-- 错误提示 -->
+<view class="intro-mask" wx:if="{{ showBargainErrorModal }}">
+  <view class="bargain-model-container">
+    <view class="message-section">
+      <text>{{bargainErrorMsg}}</text>
+    </view>
+    <view class="tip-section">
+      <text wx:if="{{ bargainErrorMsg == '好友已领取' }}">您也可以立即参加活动哦!</text>
+      <text wx:else>去首页看看其他福利活动吧</text>
+    </view>
+    <button wx:if="{{ bargainErrorMsg == '好友已领取' }}" catchtap="handleJoinBenefit" class="bargain-confirm">我也要拿</button>
+    <button wx:else catchtap="handleShowBenefits" class="bargain-confirm">看看更多活动</button>
+  </view>
+</view>
+
+<wxs module="m2">
+var getBargainedPrice = function(benefit, bargainRecords) {
+  var bargainCount = bargainRecords.length;
+  if(bargainCount >= benefit.bargainSteps.length) {
+    return benefit.giftFullPrice;
+  } else {
+    var bargainedPrice = 0;
+    for(var i = 0; i < bargainCount; i++) {
+      bargainedPrice += benefit.bargainSteps[i];
+    }
+    return bargainedPrice;
+  }
+}
+
+var bargainPrice = function(benefit, bargainRecords) {
+  var bargainCount = bargainRecords.length;
+  if(bargainCount >= benefit.bargainSteps.length) {
+    return benefit.bargainSteps[benefit.bargainSteps.length - 1];
+  } else {
+    return benefit.bargainSteps[bargainCount - 1];
+  }
+}
+
+var limitBargainRecords = function(benefit, bargainRecords) {
+  var limit = benefit.bargainSteps.length;
+  if(bargainRecords.length > limit) {
+    var records = [];
+    for(var i = 0; i < limit; i++) {
+      records.push(bargainRecords[i]);
+    }
+    return records;
+  } else {
+    return bargainRecords;
+  }
+}
+
+module.exports.getBargainedPrice = getBargainedPrice;
+module.exports.bargainPrice = bargainPrice;
+module.exports.limitBargainRecords = limitBargainRecords;
+</wxs>

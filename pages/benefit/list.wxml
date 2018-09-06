@@ -1,0 +1,29 @@
+<view class="container" wx:if="{{ loadingComplete }}">
+  <block wx:for="{{ list }}" wx:key="_id">
+    <navigator class="benefit" url="/pages/benefit/join?benefit={{item._id}}">
+      <view class="banner-wrap">
+        <image class="banner" src="{{item.bannerUrl}}"></image>
+        <view class="date-wrap">
+          <text>活动时间：{{ item.startDate }} - {{ item.endDate }}</text>
+        </view>
+        <view class="content-wrap">
+          <view class="content">
+            <text class="title">{{ item.giftName }}</text>
+            <view class="tip">
+              <text class="full-price">￥{{ item.giftFloorPrice }}</text>
+              <text class="full-price-tip">原价: ￥{{ item.giftFullPrice }}</text>
+              <text class="floor-price-tip">砍到</text>
+              <text class="floor-price">{{ item.giftFloorPrice }}</text>
+              <text class="floor-price-tip">元可获得</text>
+            </view>
+          </view>
+          <view wx:if="{{ item.status == 2 }}" class="complete-status">活动已结束</view>
+          <view wx:else class="primary-status">火热进行中</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <button bindgetuserinfo="getUserInfo" class="get-user-info-button" openType="getUserInfo" wx:if="{{ !hasUserInfo && canIUse }}">
+  </button>
+</view>
+<loading wx:else></loading>

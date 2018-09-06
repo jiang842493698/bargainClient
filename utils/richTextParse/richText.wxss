@@ -1,0 +1,45 @@
+/* 部分我自己常用的标签 */
+/* 段落 */
+.rich-p {
+  font-size: 30rpx;
+  padding-top: 24rpx;
+  word-break: break-all;
+}
+/* pre */
+.rich-pre {
+  font-size: 26rpx;
+  margin-top: 24rpx;
+  padding: 12rpx;
+  background: #f5f2f0;
+  white-space: pre-wrap; 
+  word-break: break-all;
+}
+/* 图片 */
+.rich-img {
+  width: 100%;
+}
+/* 超链接 */
+.rich-a {
+  color: #6bd;
+}
+/* 表格 */
+.rich-table {
+  border-bottom: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+  border-spacing: 0;
+  font-size: 26rpx;
+}
+.rich-td,.rich-th {
+  border-top: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+  padding:5px 3px;
+}
+.rich-th {
+  background: #f8f8f8;
+}
+.rich-h1,.rich-h2,.rich-h3,.rich-h4,.rich-h5,.rich-h6 {
+  padding-top: 1em;
+}
+
+/* 引入prism样式 */
+@import 'prism.wxss';

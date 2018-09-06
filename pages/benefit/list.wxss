@@ -1,0 +1,124 @@
+.container {
+  margin-bottom: 100rpx;
+}
+
+.benefit {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 700rpx;
+  height: 400rpx;
+  margin: 20rpx auto;
+  border: none;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 2rpx 2rpx 60rpx 2rpx rgba(170, 170, 170, 0.3);
+}
+
+.benefit:first-child {
+  margin-top: 20rpx;
+}
+
+.banner-wrap {
+  display: block;
+  width: 700rpx;
+  height: 400rpx;
+  position: relative;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 700rpx;
+  height: 350rpx;
+}
+
+.date-wrap {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  height: 30rpx;
+  z-index: 50;
+  font-size: 20rpx;
+  padding: 5rpx 20rpx;
+  color: #fff;
+  border-radius: 15rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  width: 700rpx;
+  z-index: 50;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .title {
+  line-height: 1;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+
+.content .tip {
+  line-height: 1;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.tip .full-price {
+  color: #FF3333;
+  font-weight: bold;
+}
+
+.tip .full-price-tip {
+  color: #B2B2B2;
+  margin-left: 10rpx;
+  font-size: 22rpx;
+}
+
+.tip .floor-price {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #FF3333;
+}
+
+.tip .floor-price-tip {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+}
+
+.complete-status {
+  height: 40rpx;
+  border-radius: 30rpx;
+  margin-right: 25rpx;
+  padding: 10rpx 30rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #686868;
+  background: linear-gradient(to right, #D8D8D8, #B4B4B4);
+}
+
+.primary-status {
+  height: 40rpx;
+  border-radius: 30rpx;
+  margin-right: 25rpx;
+  padding: 10rpx 30rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #fff;
+  background: #F96063;
+}

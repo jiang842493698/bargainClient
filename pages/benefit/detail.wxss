@@ -1,0 +1,12 @@
+.container {
+  width: 750rpx;
+}
+
+.intro-container {
+  width: 750rpx;
+}
+
+.intro-image {
+  width: 100%;
+  height: 100%;
+}

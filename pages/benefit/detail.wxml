@@ -1,0 +1,7 @@
+<view class="container" wx:if="{{ loadingComplete }}">
+  <!-- <view class="intro-container">
+    
+  </view> -->
+  <image class="intro-image" src="{{ benefit.introUrl }}" mode="widthFix"></image>
+</view>
+<loading wx:else></loading>

@@ -1,0 +1,64 @@
+
+.fun_more{
+  margin-top:20rpx; 
+  width: 100%;
+}
+.fun_more_for{
+  width: 100%;
+  height: 150rpx;
+
+  background-color: #fff;
+}
+.fun_more_in{
+  margin-left: 30rpx;
+  width: 720rpx;
+  height: 125rpx;
+  padding-top: 25rpx;
+  display: flex;
+  
+
+}
+.fun_more_image{
+  
+  width: 100rpx;
+  height: 100rpx;
+  
+  border : 1rpx solid #CCC;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.image{
+  width: 100rpx;
+  height: 100rpx;
+   border-radius: 50%;
+}
+.game_operating{
+  margin-left: 30rpx;
+  width: 590rpx;
+  height: 125rpx;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  display: flex;
+  border-bottom: 1rpx solid #bbb;
+}
+.game_name{
+  width: 300rpx;
+  height: 100rpx;
+}
+.game_introduction{
+  width: 220rpx;
+  height: 100rpx;
+  text-align: center;
+  color: #bbb;
+  overflow: hidden;
+}
+.more{
+  width: 50rpx;
+   height: 100rpx;
+   margin:12rpx auto;
+}
+.more_image{
+  width: 50rpx;
+  height: 50rpx;
+  
+}

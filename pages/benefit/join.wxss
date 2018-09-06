@@ -1,0 +1,331 @@
+page {
+  background-color: #48389F;
+}
+
+.container {
+  padding-bottom: 100px;
+  background-color: #48389F;
+  align-items: center;
+}
+
+.top-wrap {
+  height: 60rpx;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-wrap .rule {
+  font-size: 26rpx;
+  line-height: 1.3;
+  margin-right: 40rpx;
+}
+
+.top-wrap .back {
+  font-size: 26rpx;
+  line-height: 1.3;
+  margin-left: 40rpx;
+}
+
+.header-wrap {
+  display: block;
+  position: absolute;
+  border-radius: 16rpx;
+  width: 680rpx;
+  height: 380rpx;
+  top: 60rpx;
+  left: 35rpx;
+  box-shadow: 2rpx 2rpx 30rpx 2rpx rgba(0, 0, 0, 0.3);
+}
+
+.header-wrap .header-image {
+  position: relative;
+  border-radius: 16rpx;
+  width: 100%;
+  height: 100%;
+}
+
+/* 获奖概况区域 */
+.winner-container {
+  width: 700rpx;
+  height: 180rpx;
+  margin: 15rpx 0;
+  color: #666666;
+  font-size: 24rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.winner-header-list {
+  height: 62rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner-header {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 4rpx;
+}
+
+.winner-survey {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner-survey .show-more {
+  color: #0066CC;
+  margin-left: 40rpx;
+}
+
+/* 用户砍价状态 */
+.status-container {
+  width: 700rpx;
+  height: 125rpx;
+  margin: 360rpx 0 15rpx 0;
+  background-color: #FAFAFA;
+  border-radius: 12rpx;
+  color: #666666;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 2rpx 2rpx 80rpx 2rpx rgba(0, 0, 0, 0.5);
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.status-item {
+  width: 230rpx;
+  height: 125rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: normal;
+}
+
+.status-value {
+  color: #FF3333;
+  font-weight: bold;
+}
+
+.status-item .large {
+  font-size: 40rpx;
+  margin: 0 10rpx;
+}
+
+/* 操作区域 */
+.action-container {
+  width: 700rpx;
+  height: 220rpx;
+  margin: 15rpx 0;
+  background-color: transparent;
+  border-radius: 12rpx;
+  color: #ffffff;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.action-tips {
+  font-size: 24rpx;
+  line-height: 1.6;
+}
+
+.action-tips .tips-number {
+  font-size: 32rpx;
+  color: #FFFF00;
+}
+
+.action-button {
+  width: 480rpx;
+  height: 100rpx;
+  font-weight: bold;
+  border-radius: 50rpx;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #FF9393, #FF4D63);
+  color: #FFFFFF;
+}
+
+/* 砍价榜 */
+.bargain-container {
+  width: 700rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bargain-container .title, .bargain-container .show-more {
+  font-size: 28rpx;
+  line-height: 1.6;
+  margin: 10rpx auto;
+  color: #FF3333;
+}
+
+.bargain-info {
+  width: 600rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.bargain-info .avatar {
+  width: 65rpx;
+  height: 65rpx;
+  border-radius: 50%;
+  flex-grow: 0;
+}
+
+.bargain-info .nickname {
+  margin-left: 20rpx;
+}
+
+.bargain-info .bargain {
+  margin-right: 20rpx;
+  color: #DA4733;
+}
+
+.bargain-info-empty {
+  width: 600rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #999999;
+  font-size: 28rpx;
+}
+
+
+/* 弹出框 */
+.intro-mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+}
+
+.intro-container {
+  width: 100%;
+  background: #fff;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  margin: 40rpx;
+}
+
+.intro-title {
+  font-size: 40rpx;
+  width: 100%;
+  text-align: center;
+  color: #CD4340;
+}
+
+.rule-content {
+  height: 700rpx;
+  
+}
+
+.intro-confirm {
+  font-size: 40rpx;
+  text-align: center;
+  width: 330rpx;
+  height: 80rpx;
+  margin-top: 40rpx;
+  background-color: #F9CB6E;
+  color: #CD4340;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+}
+
+.bargain-model-container {
+  width: 100%;
+  background: #CF3D3D;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  color: #FFCA99;
+  border-radius: 12rpx;
+  margin: 40rpx;
+}
+
+.message-section {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gift-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tip-section {
+  color: #FFFFFF;
+  font-size: 24rpx;
+  margin: 35rpx auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tip-section .help-bargainer-count {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.bargain-confirm {
+  width: 340rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background-color: #FFCC66;
+  color: #CF3D3D;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-weight: 900;
+}

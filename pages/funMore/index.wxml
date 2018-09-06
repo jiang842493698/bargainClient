@@ -1,0 +1,38 @@
+<!--pages/funMore/index.wxml-->
+<!-- <text>pages/funMore/index.wxml</text> -->
+<view wx:if="{{loadingComplete}}">
+  <view class='fun_More'>
+    <view class='fun_more_for' wx:for="{{gameArray}}" wx:for-item="app" wx:key="_id"
+      data-appid="{{app.appid}}" data-apptitle="{{app.title}}"  >
+      <navigator target="miniProgram" open-type="navigate"  app-id="{{app.appid}}"
+        path="{{ app.needPath ? app.path : '' }}"
+        extra-data="{{ app.needExtraData ? app.extraData : '' }}"
+        version="{{ app.needVersion ? app.version : '' }}">
+        <view class='fun_more_in'>
+          <view class='fun_more_image'>
+            <image class='image' src="{{app.icon}}"></image>
+          </view>
+          <view class='game_operating'>
+            <view class='game_name'>
+              {{app.title}}
+            </view>
+            <view class='game_introduction'>
+              {{app.description}}
+            </view>
+            <view class='more'>
+              <image class='more_image' src="/images/right-arrow.png"></image>
+            </view>
+          </view>
+
+        </view>
+      </navigator>
+      
+    </view>
+  </view>
+
+</view>
+<loading wx:else></loading>
+
+
+
+

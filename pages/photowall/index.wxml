@@ -1,0 +1,18 @@
+<view wx:if="{{ loadingComplete }}">
+  <view class='winner-container'>
+    <view class='winner-count'>
+      {{ total }}位已砍价成功
+    </view>
+    <view class='winner-header-list'>
+      <scroll-view class='winner-header-image'>
+        <image wx:for="{{ list }}" wx:key="*this" lazy-load='true' class='header-image' src="{{ item }}"></image>
+      </scroll-view>
+    </view>
+    <view hidden="{{ total == list.length }}">
+      <view class='show_more'>
+        <text bindtap='{{ !loadsWitch?"":"handleShowMore" }}'>{{ showMore }}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<loading wx:else></loading>

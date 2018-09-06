@@ -1,0 +1,43 @@
+.winner-container {
+  width: 100%;
+}
+
+.winner-count {
+  width: 100%;
+  height: 110rpx;
+  font-size: 34rpx;
+  line-height: 110rpx;
+  text-align: center;
+  margin-top: 50rpx; 
+  color: #acacac
+}
+
+.winner-header-list {
+  margin-left: 30rpx;
+  width: 690rpx;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.winner-header-image {
+  width: 690rpx;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.header-image {
+  width: 69rpx;
+  height: 69rpx;
+  overflow: hidden;
+  margin-bottom: 0rpx;
+}
+
+.show_more {
+  width: 100%;
+  height: 110rpx;
+  color: #0066CC;
+  line-height: 110rpx;
+  text-align: center;
+  font-size:28rpx;
+  margin-bottom: 50rpx;
+}

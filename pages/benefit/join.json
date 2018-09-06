@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "loading": "../../components/loading/index"
+  },
+  "navigationBarTitleText": "活动详情",
+  "backgroundColor": "#48389F"
+}

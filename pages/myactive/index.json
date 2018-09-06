@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "loading": "../../components/loading/index"
+  },
+  "navigationBarTitleText": "我的活动",
+  "onReachBottomDistance":30
+}

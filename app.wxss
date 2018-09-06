@@ -1,0 +1,35 @@
+/**app.wxss**/
+@import "./utils/richTextParse/richText.wxss";
+
+page {
+  background-color: #efefef;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+
+button::after { border: none; }
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
+.get-user-info-button {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

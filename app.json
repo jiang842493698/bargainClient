@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/benefit/list",
+    "pages/benefit/join",
+    "pages/benefit/help",
+    "pages/benefit/detail",
+    "pages/photowall/index",
+    "pages/profile/index",
+    "pages/myactive/index",
+    "pages/funMore/index"   
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "网红爆款福利",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#f0f0f0"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF6767",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+        {
+            "pagePath": "pages/benefit/list",
+            "text": "福利",
+            "iconPath": "images/benifit_list_normal.png",
+            "selectedIconPath": "images/benifit_list_checked.png"
+        },
+        {
+            "pagePath": "pages/profile/index",
+            "text": "我的",
+            "iconPath": "images/mine_noraml.png",
+            "selectedIconPath": "images/mine_checked.png"
+        }
+    ]
+}
+}

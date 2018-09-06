@@ -1,0 +1,36 @@
+<view class="profile-page" >
+  <view class="mine">
+    <view class="mine_title">
+        <view class="mine_title_info">
+          <view class="mine_title_info_image_view">
+              <open-data class="user_avatar_url" type="userAvatarUrl"></open-data>
+          </view>
+          <view class="mine_title_info_name">
+              <view class="name"><open-data type="userNickName" ></open-data></view>
+          </view>
+          <view class="address_view">
+            <view class="select_address"></view>
+            <view class='right_arrow right'>
+              <image class='right_arrow_image' src="/images/right-arrow.png" />
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="mine_body">
+        <view class="activity" bindtap='mine_activity'>
+            <view class="mine_activity">我参与的活动</view>
+            <view class='right_arrow right' >
+              <image class='right_arrow_image' src="/images/right-arrow.png" />
+            </view>
+        </view>
+        <navigator class="fun_more" target="miniProgram" path="pages/index/index?ald_media_id=1826&ald_link_key=8e947fa90c9a90ba&ald_position_id=0" app-id="wx0ade9fe6fbeaa89c">
+          <view class="mine_activity">更多好玩推荐</view>
+            <view class='right_arrow right'>
+            <image class='right_arrow_image' src="/images/right-arrow.png" />
+          </view>
+        </navigator>
+    </view>
+  </view>
+  <button bindgetuserinfo="getUserInfo" class="get-user-info-button" openType="getUserInfo" wx:if="{{ !hasUserInfo && canIUse }}">
+  </button>
+</view>
